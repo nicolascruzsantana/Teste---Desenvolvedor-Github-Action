@@ -23,10 +23,15 @@ jobs:
       run: npm run build
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      id: upload-release-artifact
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: my-app
-        path: dist
+        upload_url: https://uploads.github.com/repos/${{ github.repository }}/releases/${{ github.event.release.id }}/assets
+        asset_path: dist
+        asset_name: my-app-${{ github.run_id }}.zip
+        asset_content_type: application/zip
 
   deploy:
     needs: build
