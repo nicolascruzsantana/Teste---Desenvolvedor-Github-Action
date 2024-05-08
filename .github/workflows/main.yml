@@ -41,7 +41,7 @@ jobs:
     steps:
     - name: Approval
       id: approval
-      uses: tzkhan/approvals-action@v2
+      uses: actions/approve-reviews@v1
       with:
         github-token: ${{ secrets.DEPLOY_APPROVAL_TOKEN }}
 
