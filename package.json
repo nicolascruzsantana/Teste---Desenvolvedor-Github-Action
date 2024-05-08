@@ -1,0 +1,21 @@
+{
+  "name": "ci/cd pipeline",
+  "version": "1.0.0",
+  "description": "teste",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "echo \"A construção é tratada pela pipeline do GitHub Actions\"",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    // Dependências do seu projeto
+  },
+  "devDependencies": {
+    "jest": "^27.0.0"
+    // Outras dependências de desenvolvimento do seu projeto
+  }
+}
