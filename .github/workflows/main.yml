@@ -43,9 +43,15 @@ jobs:
 
     - name: Deploy to test environment
       run: |
-        # Add your deployment script here
+        # Assuming the artifact is a zip file
+          unzip my-app.zip -d my-app
+          echo "Deploying to test environment"
         # For example, deploying to a test server
         echo "Deploying to test environment"
+
+    - name: Clean up artifact
+      run: |
+        rm -rf my-app my-app.zip
 
   notify:
     needs: [build, deploy]
